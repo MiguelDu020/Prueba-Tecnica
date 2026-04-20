@@ -1,0 +1,44 @@
+# ── Node ──────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# ── Build output ───────────────────────
+dist/
+dist-ssr/
+*.local
+
+# ── Environment & secrets ──────────────
+.env
+.env.local
+.env.*.local
+
+# ── OS / Editor ────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ── Project-specific ───────────────────
+# Raw data files (too large for git)
+dashboard/public/cleaned_long_format.csv
+Datos/
+
+# Generated JSON (reproducible via script)
+backend/data/store_data.json
+
+# Word / HTML mockup files (not source code)
+*.docx
+Mockup.html
+TODO.md
+
+# n8n (no longer used)
+n8n/
