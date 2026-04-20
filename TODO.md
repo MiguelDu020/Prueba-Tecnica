@@ -1,0 +1,6 @@
+- [x] Editar `dashboard/.gitignore` para ignorar:
+  - [x] `Mockup.html`
+  - [x] `Prueba RappiMakers 2026 (2).docx`
+  - [x] `TODO.md`
+  - [x] carpeta `datasets/` y `Datasets/`
+- [x] Verificar cambios
