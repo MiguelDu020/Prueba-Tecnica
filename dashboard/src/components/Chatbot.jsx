@@ -13,6 +13,28 @@ import { useEffect, useRef, useState } from "react";
 // ── Backend URL (relative: Vite proxies /chat → http://localhost:3001/chat)
 const BACKEND_URL = "/chat";
 
+// ── Markdown → HTML (bold, italic, lists, line breaks) ────────────────────
+function mdToHtml(text) {
+  if (!text) return "";
+  return text
+    // Bold: **text** or __text__
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/__(.+?)__/g, "<strong>$1</strong>")
+    // Italic: *text* or _text_
+    .replace(/\*([^\*]+)\*/g, "<em>$1</em>")
+    .replace(/_([^_]+)_/g, "<em>$1</em>")
+    // Inline code: `code`
+    .replace(/`([^`]+)`/g, "<code style='background:rgba(0,0,0,0.08);padding:1px 5px;border-radius:3px;font-size:0.88em'>$1</code>")
+    // Bullet lists: lines starting with - or •
+    .replace(/^[-•]\s+(.+)$/gm, "<li>$1</li>")
+    .replace(/(<li>.*<\/li>)/s, "<ul style='margin:6px 0 6px 16px;padding:0'>$1</ul>")
+    // Headers: ## or ###
+    .replace(/^###\s+(.+)$/gm, "<strong style='display:block;margin-top:8px'>$1</strong>")
+    .replace(/^##\s+(.+)$/gm, "<strong style='display:block;font-size:1.05em;margin-top:8px'>$1</strong>")
+    // Line breaks
+    .replace(/\n/g, "<br>");
+}
+
 // ── Quick replies ──────────────────────────────────────────────────────────
 const QUICK_REPLIES = [
   ["🔴 Tiendas offline", "¿Cuántas tiendas estuvieron offline?"],
@@ -22,11 +44,11 @@ const QUICK_REPLIES = [
 ];
 
 // ── Helpers ────────────────────────────────────────────────────────────────
-async function queryChatbot(question) {
+async function queryChatbot(question, history = []) {
   const res = await fetch(BACKEND_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ question }),
+    body: JSON.stringify({ question, history }),
   });
 
   if (!res.ok) {
@@ -77,12 +99,21 @@ export default function Chatbot() {
     const question = text.trim();
     if (!question || loading) return;
 
+    // Build conversation history (last 10 turns) so the model remembers context
+    const history = messages
+      .filter((m) => m.role === "user" || m.role === "bot")
+      .slice(-10)
+      .map((m) => ({
+        role: m.role === "bot" ? "assistant" : "user",
+        content: m.text.replace(/<[^>]*>/g, ""), // strip HTML tags
+      }));
+
     setMessages((m) => [...m, { role: "user", text: question, time: nowTime() }]);
     setInput("");
     setLoading(true);
 
     try {
-      const reply = await queryChatbot(question);
+      const reply = await queryChatbot(question, history);
       setMessages((m) => [...m, { role: "bot", text: reply, time: nowTime() }]);
       setBackendStatus("ok");
     } catch (err) {
@@ -106,7 +137,7 @@ export default function Chatbot() {
       : "#fc674e";
   const statusLabel =
     backendStatus === "ok"
-      ? "IA Conectada · Gemini"
+      ? "IA Conectada · Groq"
       : backendStatus === "error"
       ? "Backend offline"
       : backendStatus === "no-data"

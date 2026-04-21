@@ -1,10 +1,3 @@
-/**
- * SLAGauge.jsx — Visual gauge for Active Capacity Index (SLA Global).
- *
- * Displays a semi-circular gauge showing the current capacity percentage
- * relative to the historical maximum. Color-coded by threshold:
- *   ≥90% green, 75-89% orange, <75% red
- */
 import { COLORS } from "../utils/chartConfig.js";
 
 export default function SLAGauge({ capacityIndex, slaStatus, latestValue, maxValue }) {
@@ -13,15 +6,15 @@ export default function SLAGauge({ capacityIndex, slaStatus, latestValue, maxVal
     slaStatus.level === "ok"
       ? COLORS.green
       : slaStatus.level === "warning"
-      ? COLORS.orange
-      : COLORS.red;
+        ? COLORS.orange
+        : COLORS.red;
 
   const statusLabel =
     slaStatus.level === "ok"
       ? "OPERATIVO"
       : slaStatus.level === "warning"
-      ? "DEGRADADO"
-      : "CRÍTICO";
+        ? "DEGRADADO"
+        : "CRÍTICO";
 
   return (
     <div className="sla-gauge-card">

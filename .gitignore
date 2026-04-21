@@ -35,10 +35,5 @@ Datos/
 # Generated JSON (reproducible via script)
 backend/data/store_data.json
 
-# Word / HTML mockup files (not source code)
-*.docx
-Mockup.html
-TODO.md
-
 # n8n (no longer used)
 n8n/

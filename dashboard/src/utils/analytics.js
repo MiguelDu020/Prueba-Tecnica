@@ -1,20 +1,4 @@
 /**
- * analytics.js — Pure analytics functions for Rappi Systemic Health Dashboard
- *
- * All functions are pure (no side effects) and operate on the "Long Format" data:
- *   { timestamp: string, value: number, source_file: string, metric: string }
- *
- * Business context:
- *   "value" = total visible stores at that 10-second snapshot.
- *   A drop in value = loss of operational capacity = fewer options for end users.
- */
-
-// ──────────────────────────────────────────────────────────────────────────────
-// 1. Índice de Capacidad Activa (Active Capacity Index / SLA Global)
-//    → current value as % of historical maximum
-// ──────────────────────────────────────────────────────────────────────────────
-
-/**
  * Compute the Active Capacity Index (SLA).
  * @param {number} current  – current (or latest) store count
  * @param {number} maxValue – historical maximum store count
@@ -46,11 +30,6 @@ export function evaluateSLAStatus(capacityPct, threshold = 90) {
     message: `¡ALERTA CRÍTICA! Capacidad al ${capacityPct.toFixed(1)}% — impacto severo en oferta`,
   };
 }
-
-// ──────────────────────────────────────────────────────────────────────────────
-// 2. Volatilidad de Red (Network Volatility / Micro-drops)
-//    → detect sudden changes between consecutive 10-second intervals
-// ──────────────────────────────────────────────────────────────────────────────
 
 /**
  * Compute deltas between consecutive readings to identify micro-drops.
@@ -97,11 +76,6 @@ export function volatilityScore(volatilityData) {
     deltas.reduce((sum, d) => sum + (d - mean) ** 2, 0) / deltas.length;
   return Math.sqrt(variance);
 }
-
-// ──────────────────────────────────────────────────────────────────────────────
-// 3. Tiempo de Resiliencia (Recovery Time)
-//    → how long it takes to recover from a massive drop back to optimal level
-// ──────────────────────────────────────────────────────────────────────────────
 
 /**
  * Find recovery events: sequences where value drops below threshold,
@@ -153,10 +127,6 @@ export function avgRecoveryTimeMinutes(recoveryEvents) {
   const total = recoveryEvents.reduce((s, e) => s + e.durationMinutes, 0);
   return Math.round(total / recoveryEvents.length);
 }
-
-// ──────────────────────────────────────────────────────────────────────────────
-// 4. Aggregation helpers for charts
-// ──────────────────────────────────────────────────────────────────────────────
 
 /**
  * Bucket rows into N evenly-spaced groups for chart rendering.
@@ -228,10 +198,6 @@ export function storeGapRanking(rows, maxValue) {
     }))
     .sort((a, b) => b.gap - a.gap);
 }
-
-// ──────────────────────────────────────────────────────────────────────────────
-// 5. Formatting helpers
-// ──────────────────────────────────────────────────────────────────────────────
 
 export function fmtNum(v) {
   if (v == null || Number.isNaN(v)) return "-";
