@@ -398,7 +398,7 @@ export default function App() {
       </main>
 
       {/* ── CHATBOT (AI Consultant via n8n) ── */}
-      <Chatbot />
+      <Chatbot kpis={kpis} tableRows={tableRows} />
     </div>
   );
 }

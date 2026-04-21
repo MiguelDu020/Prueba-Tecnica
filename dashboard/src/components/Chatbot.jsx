@@ -1,17 +1,15 @@
-/**
- * Chatbot.jsx — Consultor Operativo de Rappi (Gemini Backend)
- *
- * Arquitectura:
- *   1. Usuario escribe pregunta
- *   2. POST /chat → backend Express → Google Gemini + store_data.json
- *   3. Respuesta mostrada en el chat
- *
- * El backend está en: /backend/server.js (puerto 3001)
- */
+
 import { useEffect, useRef, useState } from "react";
 
-// ── Backend URL (relative: Vite proxies /chat → http://localhost:3001/chat)
+
 const BACKEND_URL = "/chat";
+
+const QUICK_REPLIES = [
+  ["🔴 Tiendas offline", "¿Cuántas tiendas estuvieron offline?"],
+  ["📊 Capacidad global", "¿Cuál es el índice de capacidad activa?"],
+  ["⏱️ Mejor hora", "¿A qué hora hay más tiendas disponibles?"],
+  ["📉 Micro-caídas", "¿Cuántas micro-caídas se detectaron?"],
+];
 
 // ── Markdown → HTML (bold, italic, lists, line breaks) ────────────────────
 function mdToHtml(text) {
@@ -35,20 +33,11 @@ function mdToHtml(text) {
     .replace(/\n/g, "<br>");
 }
 
-// ── Quick replies ──────────────────────────────────────────────────────────
-const QUICK_REPLIES = [
-  ["🔴 Tiendas offline", "¿Cuántas tiendas estuvieron offline?"],
-  ["📊 Capacidad global", "¿Cuál es el índice de capacidad activa?"],
-  ["⏱️ Mejor hora", "¿A qué hora hay más tiendas disponibles?"],
-  ["📉 Micro-caídas", "¿Cuántas micro-caídas se detectaron?"],
-];
-
-// ── Helpers ────────────────────────────────────────────────────────────────
-async function queryChatbot(question, history = []) {
+async function queryChatbot(question, history = [], dashboardData = null) {
   const res = await fetch(BACKEND_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ question, history }),
+    body: JSON.stringify({ question, history, dashboardData }),
   });
 
   if (!res.ok) {
@@ -60,8 +49,7 @@ async function queryChatbot(question, history = []) {
   return data.response;
 }
 
-// ══════════════════════════════════════════════════════════════════════════
-export default function Chatbot() {
+export default function Chatbot({ kpis, tableRows }) {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
@@ -99,7 +87,7 @@ export default function Chatbot() {
     const question = text.trim();
     if (!question || loading) return;
 
-    // Build conversation history (last 10 turns) so the model remembers context
+    // Build conversation history (last 10 turns max) for context
     const history = messages
       .filter((m) => m.role === "user" || m.role === "bot")
       .slice(-10)
@@ -113,8 +101,8 @@ export default function Chatbot() {
     setLoading(true);
 
     try {
-      const reply = await queryChatbot(question, history);
-      setMessages((m) => [...m, { role: "bot", text: reply, time: nowTime() }]);
+      const reply = await queryChatbot(question, history, { kpis, tableRows });
+      setMessages((m) => [...m, { role: "bot", text: mdToHtml(reply), time: nowTime() }]);
       setBackendStatus("ok");
     } catch (err) {
       const errMsg =
@@ -133,16 +121,16 @@ export default function Chatbot() {
     backendStatus === "ok"
       ? "#29D884"
       : backendStatus === "error"
-      ? "#ff4239"
-      : "#fc674e";
+        ? "#ff4239"
+        : "#fc674e";
   const statusLabel =
     backendStatus === "ok"
       ? "IA Conectada · Groq"
       : backendStatus === "error"
-      ? "Backend offline"
-      : backendStatus === "no-data"
-      ? "Sin datos JSON"
-      : "Verificando...";
+        ? "Backend offline"
+        : backendStatus === "no-data"
+          ? "Sin datos JSON"
+          : "Verificando...";
 
   // ── Icons ────────────────────────────────────────────────────────────────
   const chatIcon = (
@@ -169,7 +157,7 @@ export default function Chatbot() {
         className="chatbot-toggle"
         onClick={() => setOpen((o) => !o)}
         id="chatToggle"
-        title="Consultor IA de Rappi"
+        title="Chatbot-AI Consultor"
       >
         {open ? closeIcon : chatIcon}
         {!open && <div className="notif-dot" />}
