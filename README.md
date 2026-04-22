@@ -4,19 +4,27 @@ Este proyecto es una solución integral (Frontend + Backend + IA) para la visual
 
 ---
 
-## 🏗 Arquitectura y Decisiones Técnicas
+## 🏗 Arquitectura y Stack Tecnológico
 
-El proyecto consta de tres pilares principales:
+Este proyecto utiliza una arquitectura moderna, modular y *stateless*, diseñada para máxima velocidad y eficiencia de costos.
 
-1. **Pipeline de Datos (ETL en Python)**
-   - **Por qué:** Enviar el dataset crudo (14MB+) a un LLM en cada solicitud es lento, costoso e induce a alucinaciones.
-   - **Solución:** Pre-procesamos los datos para extraer métricas semánticas (SLA, micro-caídas, resiliencia) a un JSON ultraligero (`store_data.json`) de menos de 20KB.
-2. **Dashboard (React 19 + Vite)**
-   - **Por qué:** Necesitamos una visualización limpia e instantánea. React con Chart.js permite renderizar decenas de miles de puntos de forma optimizada.
-   - **Solución:** Un frontend modular sin gestores de estado complejos, usando Context y Hooks (`useStoreData`) que exponen cálculos en tiempo real (KPIs).
-3. **Chatbot Semántico (Express + Groq / Llama 3.3 70B)**
-   - **Por qué Groq:** Su motor de inferencia (LPUs) ofrece latencia de respuesta en milisegundos, fundamental para una UX fluida. El modelo Llama 3.3 70B tiene excelentes capacidades de razonamiento numérico.
-   - **Implementación Agéntica:** El chatbot recibe de forma dinámica tanto los datos históricos como los **filtros y KPIs activos** que el usuario está viendo en el Dashboard. Esto le da un contexto perfecto de la UI sin necesidad de un complejo sistema RAG (Retrieval-Augmented Generation).
+### 💻 Stack Tecnológico
+- **Frontend:** React 19, Vite, Chart.js (Visualización de datos), Vanilla CSS.
+- **Backend:** Node.js, Express.
+- **Inteligencia Artificial:** Groq SDK, Modelo Llama-3.3-70b-versatile (Alta velocidad de inferencia).
+- **Procesamiento de Datos (ETL):** Python (Pandas).
+- **Despliegue y Orquestación:** Docker, Docker Compose, Nginx (Reverse Proxy).
+
+### 🧠 Decisiones Arquitectónicas
+
+1. **Pipeline de Datos (ETL Anti-RAG Pesado)**
+   - **Problema:** Enviar un dataset crudo (14MB+) de ~70,000 registros a un LLM en cada solicitud es ineficiente, altamente costoso y propenso a alucinaciones. Las bases de datos vectoriales (RAG tradicional) son excesivas para datos tabulares estructurados.
+   - **Solución:** Se implementó un script ETL en Python (`convert_csv_to_json`) que pre-procesa las métricas operativas (SLA, resiliencia, caídas) en un archivo JSON ultraligero (< 20KB) que se carga directamente en memoria.
+2. **Dashboard de Alta Performance**
+   - El frontend calcula y visualiza decenas de miles de puntos de datos en el navegador usando optimizaciones de Chart.js y Hooks de React (`useStoreData`) sin requerir un backend pesado para cálculos estadísticos.
+3. **Chatbot "UI-Aware" (Consciencia de Interfaz)**
+   - El agente de IA no está aislado. Cuando el usuario filtra fechas o tiendas en el dashboard, el frontend **inyecta los filtros activos y los KPIs actuales** directamente en el *System Prompt* del backend.
+   - Esto permite que el Chatbot de Llama 3.3 entienda exactamente lo que el usuario está viendo en su pantalla, respondiendo con un contexto perfecto.
 
 ---
 
