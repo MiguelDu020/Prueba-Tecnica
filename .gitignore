@@ -23,10 +23,12 @@ Thumbs.db
 *.sln
 *.sw?
 
-dashboard/public/cleaned_long_format.csv
+# El CSV crudo debe subirse para que los evaluadores puedan probar la app localmente (pesa solo 14MB, entra en el límite de GitHub)
+# dashboard/public/cleaned_long_format.csv
 Datos/
 
-backend/data/store_data.json
+# El JSON debe subirse a Git porque es la base de datos pre-calculada
+# backend/data/store_data.json
 
 # n8n (no longer used)
 n8n/

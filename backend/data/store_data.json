@@ -1,0 +1,1452 @@
+{
+  "generated_at": "2026-04-20T17:21:17.927601",
+  "date_range": {
+    "from": "2026-02-01 06:11:20",
+    "to": "2026-02-11 15:00:00"
+  },
+  "total_readings": 69128,
+  "total_sources": 201,
+  "global_metrics": {
+    "max_stores_ever": 6198472,
+    "min_stores_ever": 0,
+    "avg_stores": 3205055.6,
+    "capacity_index_pct": 51.71,
+    "online_readings_pct": 23.21,
+    "offline_readings_pct": 76.79,
+    "micro_drops_detected": 372
+  },
+  "hourly_distribution": {
+    "avg_stores_by_hour": {
+      "0": 668279,
+      "6": 13269,
+      "7": 37802,
+      "8": 371904,
+      "9": 1243562,
+      "10": 2154056,
+      "11": 2882823,
+      "12": 3725689,
+      "13": 4487738,
+      "14": 5158228,
+      "15": 5283019,
+      "16": 5147531,
+      "17": 5247389,
+      "18": 4984677,
+      "19": 4915170,
+      "20": 4481909,
+      "21": 3756826,
+      "22": 2849358,
+      "23": 1625870
+    },
+    "best_hour": "15:00",
+    "worst_hour": "6:00"
+  },
+  "source_breakdown": {
+    "AVAILABILITY-data.csv": {
+      "total_readings": 293,
+      "max_stores": 20762,
+      "avg_stores": 14323.3,
+      "capacity_index_pct": 68.99,
+      "min_stores": 37
+    },
+    "AVAILABILITY-data (1).csv": {
+      "total_readings": 363,
+      "max_stores": 39771,
+      "avg_stores": 33460.9,
+      "capacity_index_pct": 84.13,
+      "min_stores": 18647
+    },
+    "AVAILABILITY-data (2).csv": {
+      "total_readings": 363,
+      "max_stores": 425546,
+      "avg_stores": 325770.4,
+      "capacity_index_pct": 76.55,
+      "min_stores": 39745
+    },
+    "AVAILABILITY-data (3).csv": {
+      "total_readings": 363,
+      "max_stores": 1282681,
+      "avg_stores": 1033794.4,
+      "capacity_index_pct": 80.6,
+      "min_stores": 424265
+    },
+    "AVAILABILITY-data (4).csv": {
+      "total_readings": 363,
+      "max_stores": 2056874,
+      "avg_stores": 1833546.6,
+      "capacity_index_pct": 89.14,
+      "min_stores": 1228440
+    },
+    "AVAILABILITY-data (5).csv": {
+      "total_readings": 363,
+      "max_stores": 2731352,
+      "avg_stores": 2488915.5,
+      "capacity_index_pct": 91.12,
+      "min_stores": 2038633
+    },
+    "AVAILABILITY-data (6).csv": {
+      "total_readings": 363,
+      "max_stores": 3488777,
+      "avg_stores": 3274513.1,
+      "capacity_index_pct": 93.86,
+      "min_stores": 2725656
+    },
+    "AVAILABILITY-data (7).csv": {
+      "total_readings": 363,
+      "max_stores": 4386731,
+      "avg_stores": 4122764.6,
+      "capacity_index_pct": 93.98,
+      "min_stores": 3466178
+    },
+    "AVAILABILITY-data (8).csv": {
+      "total_readings": 363,
+      "max_stores": 5059827,
+      "avg_stores": 4866169.8,
+      "capacity_index_pct": 96.17,
+      "min_stores": 4340908
+    },
+    "AVAILABILITY-data (9).csv": {
+      "total_readings": 363,
+      "max_stores": 5224516,
+      "avg_stores": 5158635.7,
+      "capacity_index_pct": 98.74,
+      "min_stores": 5026136
+    },
+    "AVAILABILITY-data (10).csv": {
+      "total_readings": 363,
+      "max_stores": 5275443,
+      "avg_stores": 5145807.6,
+      "capacity_index_pct": 97.54,
+      "min_stores": 4965871
+    },
+    "AVAILABILITY-data (11).csv": {
+      "total_readings": 363,
+      "max_stores": 5280107,
+      "avg_stores": 5007865.2,
+      "capacity_index_pct": 94.84,
+      "min_stores": 4812101
+    },
+    "AVAILABILITY-data (12).csv": {
+      "total_readings": 363,
+      "max_stores": 4863737,
+      "avg_stores": 4741176.2,
+      "capacity_index_pct": 97.48,
+      "min_stores": 4601422
+    },
+    "AVAILABILITY-data (13).csv": {
+      "total_readings": 363,
+      "max_stores": 4617987,
+      "avg_stores": 4440455.6,
+      "capacity_index_pct": 96.16,
+      "min_stores": 4303482
+    },
+    "AVAILABILITY-data (14).csv": {
+      "total_readings": 363,
+      "max_stores": 4430975,
+      "avg_stores": 4092688.2,
+      "capacity_index_pct": 92.37,
+      "min_stores": 3861386
+    },
+    "AVAILABILITY-data (15).csv": {
+      "total_readings": 363,
+      "max_stores": 3892304,
+      "avg_stores": 3431134.8,
+      "capacity_index_pct": 88.15,
+      "min_stores": 3161669
+    },
+    "AVAILABILITY-data (16).csv": {
+      "total_readings": 363,
+      "max_stores": 3173541,
+      "avg_stores": 2424581.1,
+      "capacity_index_pct": 76.4,
+      "min_stores": 2046491
+    },
+    "AVAILABILITY-data (17).csv": {
+      "total_readings": 363,
+      "max_stores": 2051211,
+      "avg_stores": 1395815.3,
+      "capacity_index_pct": 68.05,
+      "min_stores": 977255
+    },
+    "AVAILABILITY-data (18).csv": {
+      "total_readings": 41,
+      "max_stores": 980304,
+      "avg_stores": 570681.7,
+      "capacity_index_pct": 58.21,
+      "min_stores": 1382
+    },
+    "AVAILABILITY-data (19).csv": {
+      "total_readings": 293,
+      "max_stores": 19111,
+      "avg_stores": 12530.7,
+      "capacity_index_pct": 65.57,
+      "min_stores": 28
+    },
+    "AVAILABILITY-data (20).csv": {
+      "total_readings": 363,
+      "max_stores": 42640,
+      "avg_stores": 34698.7,
+      "capacity_index_pct": 81.38,
+      "min_stores": 16447
+    },
+    "AVAILABILITY-data (21).csv": {
+      "total_readings": 363,
+      "max_stores": 431222,
+      "avg_stores": 323511.0,
+      "capacity_index_pct": 75.02,
+      "min_stores": 42522
+    },
+    "AVAILABILITY-data (22).csv": {
+      "total_readings": 363,
+      "max_stores": 1289239,
+      "avg_stores": 1056075.6,
+      "capacity_index_pct": 81.91,
+      "min_stores": 430126
+    },
+    "AVAILABILITY-data (23).csv": {
+      "total_readings": 363,
+      "max_stores": 1941205,
+      "avg_stores": 1779458.1,
+      "capacity_index_pct": 91.67,
+      "min_stores": 1282263
+    },
+    "AVAILABILITY-data (24).csv": {
+      "total_readings": 363,
+      "max_stores": 2472258,
+      "avg_stores": 2343689.9,
+      "capacity_index_pct": 94.8,
+      "min_stores": 1940414
+    },
+    "AVAILABILITY-data (25).csv": {
+      "total_readings": 363,
+      "max_stores": 3191782,
+      "avg_stores": 3019786.4,
+      "capacity_index_pct": 94.61,
+      "min_stores": 2470694
+    },
+    "AVAILABILITY-data (26).csv": {
+      "total_readings": 363,
+      "max_stores": 3843871,
+      "avg_stores": 3697831.5,
+      "capacity_index_pct": 96.2,
+      "min_stores": 3168410
+    },
+    "AVAILABILITY-data (27).csv": {
+      "total_readings": 363,
+      "max_stores": 4409752,
+      "avg_stores": 4271701.7,
+      "capacity_index_pct": 96.87,
+      "min_stores": 3816338
+    },
+    "AVAILABILITY-data (28).csv": {
+      "total_readings": 363,
+      "max_stores": 4554582,
+      "avg_stores": 4408755.1,
+      "capacity_index_pct": 96.8,
+      "min_stores": 4151895
+    },
+    "AVAILABILITY-data (29).csv": {
+      "total_readings": 363,
+      "max_stores": 4337441,
+      "avg_stores": 4171350.5,
+      "capacity_index_pct": 96.17,
+      "min_stores": 4006989
+    },
+    "AVAILABILITY-data (30).csv": {
+      "total_readings": 363,
+      "max_stores": 4114478,
+      "avg_stores": 4025769.0,
+      "capacity_index_pct": 97.84,
+      "min_stores": 3955820
+    },
+    "AVAILABILITY-data (31).csv": {
+      "total_readings": 363,
+      "max_stores": 3970382,
+      "avg_stores": 3860426.6,
+      "capacity_index_pct": 97.23,
+      "min_stores": 3723735
+    },
+    "AVAILABILITY-data (32).csv": {
+      "total_readings": 361,
+      "max_stores": 3863625,
+      "avg_stores": 3788569.2,
+      "capacity_index_pct": 98.06,
+      "min_stores": 3610433
+    },
+    "AVAILABILITY-data (33).csv": {
+      "total_readings": 363,
+      "max_stores": 3812677,
+      "avg_stores": 3474685.0,
+      "capacity_index_pct": 91.14,
+      "min_stores": 3299959
+    },
+    "AVAILABILITY-data (34).csv": {
+      "total_readings": 363,
+      "max_stores": 3332224,
+      "avg_stores": 2973478.0,
+      "capacity_index_pct": 89.23,
+      "min_stores": 2729131
+    },
+    "AVAILABILITY-data (35).csv": {
+      "total_readings": 363,
+      "max_stores": 2738245,
+      "avg_stores": 2244832.5,
+      "capacity_index_pct": 81.98,
+      "min_stores": 1878499
+    },
+    "AVAILABILITY-data (36).csv": {
+      "total_readings": 308,
+      "max_stores": 1504629,
+      "avg_stores": 1193896.6,
+      "capacity_index_pct": 79.35,
+      "min_stores": 842111
+    },
+    "AVAILABILITY-data (37).csv": {
+      "total_readings": 42,
+      "max_stores": 845210,
+      "avg_stores": 494347.0,
+      "capacity_index_pct": 58.49,
+      "min_stores": 361
+    },
+    "AVAILABILITY-data (38).csv": {
+      "total_readings": 293,
+      "max_stores": 20193,
+      "avg_stores": 13226.9,
+      "capacity_index_pct": 65.5,
+      "min_stores": 0
+    },
+    "AVAILABILITY-data (39).csv": {
+      "total_readings": 321,
+      "max_stores": 49006,
+      "avg_stores": 39520.8,
+      "capacity_index_pct": 80.64,
+      "min_stores": 30730
+    },
+    "AVAILABILITY-data (40).csv": {
+      "total_readings": 363,
+      "max_stores": 509786,
+      "avg_stores": 374043.5,
+      "capacity_index_pct": 73.37,
+      "min_stores": 48943
+    },
+    "AVAILABILITY-data (41).csv": {
+      "total_readings": 363,
+      "max_stores": 509786,
+      "avg_stores": 374043.5,
+      "capacity_index_pct": 73.37,
+      "min_stores": 48943
+    },
+    "AVAILABILITY-data (42).csv": {
+      "total_readings": 363,
+      "max_stores": 1556262,
+      "avg_stores": 1249601.4,
+      "capacity_index_pct": 80.3,
+      "min_stores": 508500
+    },
+    "AVAILABILITY-data (43).csv": {
+      "total_readings": 363,
+      "max_stores": 2401586,
+      "avg_stores": 2144606.8,
+      "capacity_index_pct": 89.3,
+      "min_stores": 1555217
+    },
+    "AVAILABILITY-data (44).csv": {
+      "total_readings": 363,
+      "max_stores": 3045033,
+      "avg_stores": 2840289.4,
+      "capacity_index_pct": 93.28,
+      "min_stores": 2400206
+    },
+    "AVAILABILITY-data (45).csv": {
+      "total_readings": 363,
+      "max_stores": 4035183,
+      "avg_stores": 3831204.1,
+      "capacity_index_pct": 94.94,
+      "min_stores": 3042471
+    },
+    "AVAILABILITY-data (46).csv": {
+      "total_readings": 363,
+      "max_stores": 4802827,
+      "avg_stores": 4581734.0,
+      "capacity_index_pct": 95.4,
+      "min_stores": 4002625
+    },
+    "AVAILABILITY-data (47).csv": {
+      "total_readings": 363,
+      "max_stores": 5414159,
+      "avg_stores": 5221344.6,
+      "capacity_index_pct": 96.44,
+      "min_stores": 4742864
+    },
+    "AVAILABILITY-data (48).csv": {
+      "total_readings": 363,
+      "max_stores": 5708166,
+      "avg_stores": 5566217.3,
+      "capacity_index_pct": 97.51,
+      "min_stores": 5412957
+    },
+    "AVAILABILITY-data (49).csv": {
+      "total_readings": 363,
+      "max_stores": 5672150,
+      "avg_stores": 5636343.0,
+      "capacity_index_pct": 99.37,
+      "min_stores": 5604743
+    },
+    "AVAILABILITY-data (50).csv": {
+      "total_readings": 363,
+      "max_stores": 5648394,
+      "avg_stores": 5513497.7,
+      "capacity_index_pct": 97.61,
+      "min_stores": 5342944
+    },
+    "AVAILABILITY-data (51).csv": {
+      "total_readings": 363,
+      "max_stores": 5387285,
+      "avg_stores": 5207390.7,
+      "capacity_index_pct": 96.66,
+      "min_stores": 5027540
+    },
+    "AVAILABILITY-data (52).csv": {
+      "total_readings": 363,
+      "max_stores": 5059470,
+      "avg_stores": 4950075.5,
+      "capacity_index_pct": 97.84,
+      "min_stores": 4844921
+    },
+    "AVAILABILITY-data (53).csv": {
+      "total_readings": 363,
+      "max_stores": 4951683,
+      "avg_stores": 4594311.7,
+      "capacity_index_pct": 92.78,
+      "min_stores": 4376619
+    },
+    "AVAILABILITY-data (54).csv": {
+      "total_readings": 363,
+      "max_stores": 4420859,
+      "avg_stores": 3908711.9,
+      "capacity_index_pct": 88.42,
+      "min_stores": 3614854
+    },
+    "AVAILABILITY-data (55).csv": {
+      "total_readings": 363,
+      "max_stores": 3617085,
+      "avg_stores": 2911835.6,
+      "capacity_index_pct": 80.5,
+      "min_stores": 2404878
+    },
+    "AVAILABILITY-data (56).csv": {
+      "total_readings": 363,
+      "max_stores": 2410227,
+      "avg_stores": 1561647.7,
+      "capacity_index_pct": 64.79,
+      "min_stores": 1030636
+    },
+    "AVAILABILITY-data (57).csv": {
+      "total_readings": 41,
+      "max_stores": 1032816,
+      "avg_stores": 613257.7,
+      "capacity_index_pct": 59.38,
+      "min_stores": 5186
+    },
+    "AVAILABILITY-data (58).csv": {
+      "total_readings": 293,
+      "max_stores": 19010,
+      "avg_stores": 13925.5,
+      "capacity_index_pct": 73.25,
+      "min_stores": 0
+    },
+    "AVAILABILITY-data (59).csv": {
+      "total_readings": 363,
+      "max_stores": 49517,
+      "avg_stores": 38905.2,
+      "capacity_index_pct": 78.57,
+      "min_stores": 17895
+    },
+    "AVAILABILITY-data (60).csv": {
+      "total_readings": 363,
+      "max_stores": 529139,
+      "avg_stores": 391225.5,
+      "capacity_index_pct": 73.94,
+      "min_stores": 49386
+    },
+    "AVAILABILITY-data (61).csv": {
+      "total_readings": 363,
+      "max_stores": 1680003,
+      "avg_stores": 1331894.1,
+      "capacity_index_pct": 79.28,
+      "min_stores": 528966
+    },
+    "AVAILABILITY-data (62).csv": {
+      "total_readings": 363,
+      "max_stores": 2593523,
+      "avg_stores": 2330778.5,
+      "capacity_index_pct": 89.87,
+      "min_stores": 1678421
+    },
+    "AVAILABILITY-data (63).csv": {
+      "total_readings": 363,
+      "max_stores": 3346679,
+      "avg_stores": 3132368.5,
+      "capacity_index_pct": 93.6,
+      "min_stores": 2592678
+    },
+    "AVAILABILITY-data (64).csv": {
+      "total_readings": 363,
+      "max_stores": 4165384,
+      "avg_stores": 3951676.9,
+      "capacity_index_pct": 94.87,
+      "min_stores": 3345695
+    },
+    "AVAILABILITY-data (65).csv": {
+      "total_readings": 363,
+      "max_stores": 4957453,
+      "avg_stores": 4772072.0,
+      "capacity_index_pct": 96.26,
+      "min_stores": 4159992
+    },
+    "AVAILABILITY-data (66).csv": {
+      "total_readings": 363,
+      "max_stores": 5645867,
+      "avg_stores": 5434139.0,
+      "capacity_index_pct": 96.25,
+      "min_stores": 4874487
+    },
+    "AVAILABILITY-data (67).csv": {
+      "total_readings": 363,
+      "max_stores": 5917626,
+      "avg_stores": 5785663.0,
+      "capacity_index_pct": 97.77,
+      "min_stores": 5463614
+    },
+    "AVAILABILITY-data (68).csv": {
+      "total_readings": 363,
+      "max_stores": 5901610,
+      "avg_stores": 5849839.5,
+      "capacity_index_pct": 99.12,
+      "min_stores": 5760867
+    },
+    "AVAILABILITY-data (69).csv": {
+      "total_readings": 363,
+      "max_stores": 5890138,
+      "avg_stores": 5738992.5,
+      "capacity_index_pct": 97.43,
+      "min_stores": 5608019
+    },
+    "AVAILABILITY-data (70).csv": {
+      "total_readings": 363,
+      "max_stores": 5614565,
+      "avg_stores": 5493854.7,
+      "capacity_index_pct": 97.85,
+      "min_stores": 5393105
+    },
+    "AVAILABILITY-data (71).csv": {
+      "total_readings": 363,
+      "max_stores": 5428814,
+      "avg_stores": 5222679.4,
+      "capacity_index_pct": 96.2,
+      "min_stores": 4924786
+    },
+    "AVAILABILITY-data (72).csv": {
+      "total_readings": 363,
+      "max_stores": 4958987,
+      "avg_stores": 4778201.9,
+      "capacity_index_pct": 96.35,
+      "min_stores": 4586647
+    },
+    "AVAILABILITY-data (73).csv": {
+      "total_readings": 363,
+      "max_stores": 4590817,
+      "avg_stores": 4052843.9,
+      "capacity_index_pct": 88.28,
+      "min_stores": 3652955
+    },
+    "AVAILABILITY-data (74).csv": {
+      "total_readings": 363,
+      "max_stores": 3655487,
+      "avg_stores": 3073663.6,
+      "capacity_index_pct": 84.08,
+      "min_stores": 2583293
+    },
+    "AVAILABILITY-data (75).csv": {
+      "total_readings": 363,
+      "max_stores": 2586932,
+      "avg_stores": 1700699.1,
+      "capacity_index_pct": 65.74,
+      "min_stores": 1134935
+    },
+    "AVAILABILITY-data (76).csv": {
+      "total_readings": 293,
+      "max_stores": 16801,
+      "avg_stores": 10839.9,
+      "capacity_index_pct": 64.52,
+      "min_stores": 0
+    },
+    "AVAILABILITY-data (77).csv": {
+      "total_readings": 363,
+      "max_stores": 50359,
+      "avg_stores": 38050.4,
+      "capacity_index_pct": 75.56,
+      "min_stores": 15357
+    },
+    "AVAILABILITY-data (78).csv": {
+      "total_readings": 363,
+      "max_stores": 539494,
+      "avg_stores": 396189.8,
+      "capacity_index_pct": 73.44,
+      "min_stores": 50353
+    },
+    "AVAILABILITY-data (79).csv": {
+      "total_readings": 363,
+      "max_stores": 1728353,
+      "avg_stores": 1349867.1,
+      "capacity_index_pct": 78.1,
+      "min_stores": 537749
+    },
+    "AVAILABILITY-data (80).csv": {
+      "total_readings": 363,
+      "max_stores": 1728353,
+      "avg_stores": 1349867.1,
+      "capacity_index_pct": 78.1,
+      "min_stores": 537749
+    },
+    "AVAILABILITY-data (81).csv": {
+      "total_readings": 363,
+      "max_stores": 2674483,
+      "avg_stores": 2355184.5,
+      "capacity_index_pct": 88.06,
+      "min_stores": 1433779
+    },
+    "AVAILABILITY-data (82).csv": {
+      "total_readings": 363,
+      "max_stores": 3447982,
+      "avg_stores": 3213784.0,
+      "capacity_index_pct": 93.21,
+      "min_stores": 2636245
+    },
+    "AVAILABILITY-data (83).csv": {
+      "total_readings": 363,
+      "max_stores": 4315005,
+      "avg_stores": 4080347.3,
+      "capacity_index_pct": 94.56,
+      "min_stores": 3447672
+    },
+    "AVAILABILITY-data (84).csv": {
+      "total_readings": 363,
+      "max_stores": 5036615,
+      "avg_stores": 4815492.7,
+      "capacity_index_pct": 95.61,
+      "min_stores": 4297744
+    },
+    "AVAILABILITY-data (85).csv": {
+      "total_readings": 363,
+      "max_stores": 5651053,
+      "avg_stores": 5493205.1,
+      "capacity_index_pct": 97.21,
+      "min_stores": 5030900
+    },
+    "AVAILABILITY-data (86).csv": {
+      "total_readings": 363,
+      "max_stores": 6094399,
+      "avg_stores": 5908133.6,
+      "capacity_index_pct": 96.94,
+      "min_stores": 5493171
+    },
+    "AVAILABILITY-data (87).csv": {
+      "total_readings": 363,
+      "max_stores": 6107574,
+      "avg_stores": 6039862.8,
+      "capacity_index_pct": 98.89,
+      "min_stores": 6003566
+    },
+    "AVAILABILITY-data (88).csv": {
+      "total_readings": 363,
+      "max_stores": 6059151,
+      "avg_stores": 5935507.3,
+      "capacity_index_pct": 97.96,
+      "min_stores": 5798024
+    },
+    "AVAILABILITY-data (89).csv": {
+      "total_readings": 363,
+      "max_stores": 5813477,
+      "avg_stores": 5678136.6,
+      "capacity_index_pct": 97.67,
+      "min_stores": 5599859
+    },
+    "AVAILABILITY-data (90).csv": {
+      "total_readings": 363,
+      "max_stores": 5625773,
+      "avg_stores": 5503712.8,
+      "capacity_index_pct": 97.83,
+      "min_stores": 5438816
+    },
+    "AVAILABILITY-data (91).csv": {
+      "total_readings": 363,
+      "max_stores": 5476694,
+      "avg_stores": 5142441.7,
+      "capacity_index_pct": 93.9,
+      "min_stores": 4861086
+    },
+    "AVAILABILITY-data (92).csv": {
+      "total_readings": 363,
+      "max_stores": 4864163,
+      "avg_stores": 4102141.4,
+      "capacity_index_pct": 84.33,
+      "min_stores": 2980349
+    },
+    "AVAILABILITY-data (93).csv": {
+      "total_readings": 363,
+      "max_stores": 3933108,
+      "avg_stores": 3277194.3,
+      "capacity_index_pct": 83.32,
+      "min_stores": 2844215
+    },
+    "AVAILABILITY-data (94).csv": {
+      "total_readings": 363,
+      "max_stores": 2849246,
+      "avg_stores": 1915057.9,
+      "capacity_index_pct": 67.21,
+      "min_stores": 1396354
+    },
+    "AVAILABILITY-data (95).csv": {
+      "total_readings": 42,
+      "max_stores": 1399184,
+      "avg_stores": 824777.7,
+      "capacity_index_pct": 58.95,
+      "min_stores": 0
+    },
+    "AVAILABILITY-data (96).csv": {
+      "total_readings": 293,
+      "max_stores": 19082,
+      "avg_stores": 13037.0,
+      "capacity_index_pct": 68.32,
+      "min_stores": 0
+    },
+    "AVAILABILITY-data (97).csv": {
+      "total_readings": 363,
+      "max_stores": 49732,
+      "avg_stores": 39951.7,
+      "capacity_index_pct": 80.33,
+      "min_stores": 17248
+    },
+    "AVAILABILITY-data (98).csv": {
+      "total_readings": 337,
+      "max_stores": 554830,
+      "avg_stores": 419447.6,
+      "capacity_index_pct": 75.6,
+      "min_stores": 237035
+    },
+    "AVAILABILITY-data (99).csv": {
+      "total_readings": 363,
+      "max_stores": 1769601,
+      "avg_stores": 1398660.5,
+      "capacity_index_pct": 79.04,
+      "min_stores": 554519
+    },
+    "AVAILABILITY-data (100).csv": {
+      "total_readings": 363,
+      "max_stores": 2767407,
+      "avg_stores": 2485719.4,
+      "capacity_index_pct": 89.82,
+      "min_stores": 1769140
+    },
+    "AVAILABILITY-data - 2026-02-11T155953.683.csv": {
+      "total_readings": 363,
+      "max_stores": 3496699,
+      "avg_stores": 3271103.0,
+      "capacity_index_pct": 93.55,
+      "min_stores": 2749152
+    },
+    "AVAILABILITY-data - 2026-02-11T155958.052.csv": {
+      "total_readings": 363,
+      "max_stores": 4382917,
+      "avg_stores": 4127981.4,
+      "capacity_index_pct": 94.18,
+      "min_stores": 3484859
+    },
+    "AVAILABILITY-data - 2026-02-11T160002.161.csv": {
+      "total_readings": 363,
+      "max_stores": 5100639,
+      "avg_stores": 4957784.4,
+      "capacity_index_pct": 97.2,
+      "min_stores": 4372455
+    },
+    "AVAILABILITY-data - 2026-02-11T160006.379.csv": {
+      "total_readings": 363,
+      "max_stores": 5899714,
+      "avg_stores": 5667197.6,
+      "capacity_index_pct": 96.06,
+      "min_stores": 5090108
+    },
+    "AVAILABILITY-data - 2026-02-11T160010.761.csv": {
+      "total_readings": 363,
+      "max_stores": 6192228,
+      "avg_stores": 6128926.6,
+      "capacity_index_pct": 98.98,
+      "min_stores": 5892778
+    },
+    "AVAILABILITY-data - 2026-02-11T160224.727.csv": {
+      "total_readings": 363,
+      "max_stores": 6192228,
+      "avg_stores": 6128926.6,
+      "capacity_index_pct": 98.98,
+      "min_stores": 5892778
+    },
+    "AVAILABILITY-data - 2026-02-11T160230.006.csv": {
+      "total_readings": 363,
+      "max_stores": 6198472,
+      "avg_stores": 6131200.3,
+      "capacity_index_pct": 98.91,
+      "min_stores": 6047861
+    },
+    "AVAILABILITY-data - 2026-02-11T160237.917.csv": {
+      "total_readings": 363,
+      "max_stores": 6124001,
+      "avg_stores": 5976683.3,
+      "capacity_index_pct": 97.59,
+      "min_stores": 5851278
+    },
+    "AVAILABILITY-data - 2026-02-11T160244.116.csv": {
+      "total_readings": 363,
+      "max_stores": 5866732,
+      "avg_stores": 5707427.8,
+      "capacity_index_pct": 97.28,
+      "min_stores": 5601701
+    },
+    "AVAILABILITY-data - 2026-02-11T160249.368.csv": {
+      "total_readings": 363,
+      "max_stores": 5685503,
+      "avg_stores": 5565326.9,
+      "capacity_index_pct": 97.89,
+      "min_stores": 5430438
+    },
+    "AVAILABILITY-data - 2026-02-11T160254.541.csv": {
+      "total_readings": 363,
+      "max_stores": 5540833,
+      "avg_stores": 5119584.7,
+      "capacity_index_pct": 92.4,
+      "min_stores": 4802937
+    },
+    "AVAILABILITY-data - 2026-02-11T160300.614.csv": {
+      "total_readings": 363,
+      "max_stores": 4823025,
+      "avg_stores": 4238533.9,
+      "capacity_index_pct": 87.88,
+      "min_stores": 3812369
+    },
+    "AVAILABILITY-data - 2026-02-11T160305.443.csv": {
+      "total_readings": 363,
+      "max_stores": 3828279,
+      "avg_stores": 3204309.9,
+      "capacity_index_pct": 83.7,
+      "min_stores": 2757558
+    },
+    "AVAILABILITY-data - 2026-02-11T160311.568.csv": {
+      "total_readings": 363,
+      "max_stores": 2759481,
+      "avg_stores": 1960782.1,
+      "capacity_index_pct": 71.06,
+      "min_stores": 1504845
+    },
+    "AVAILABILITY-data - 2026-02-11T160316.643.csv": {
+      "total_readings": 41,
+      "max_stores": 1506425,
+      "avg_stores": 918628.8,
+      "capacity_index_pct": 60.98,
+      "min_stores": 29616
+    },
+    "AVAILABILITY-data - 2026-02-11T160356.526.csv": {
+      "total_readings": 292,
+      "max_stores": 19302,
+      "avg_stores": 12451.8,
+      "capacity_index_pct": 64.51,
+      "min_stores": 155
+    },
+    "AVAILABILITY-data - 2026-02-11T160404.565.csv": {
+      "total_readings": 363,
+      "max_stores": 40542,
+      "avg_stores": 35689.2,
+      "capacity_index_pct": 88.03,
+      "min_stores": 18261
+    },
+    "AVAILABILITY-data - 2026-02-11T160410.510.csv": {
+      "total_readings": 363,
+      "max_stores": 491257,
+      "avg_stores": 365070.2,
+      "capacity_index_pct": 74.31,
+      "min_stores": 40139
+    },
+    "AVAILABILITY-data - 2026-02-11T160414.589.csv": {
+      "total_readings": 363,
+      "max_stores": 1596438,
+      "avg_stores": 1283405.9,
+      "capacity_index_pct": 80.39,
+      "min_stores": 491187
+    },
+    "AVAILABILITY-data - 2026-02-11T160419.720.csv": {
+      "total_readings": 363,
+      "max_stores": 2571654,
+      "avg_stores": 2297202.8,
+      "capacity_index_pct": 89.33,
+      "min_stores": 1595653
+    },
+    "AVAILABILITY-data - 2026-02-11T160425.291.csv": {
+      "total_readings": 363,
+      "max_stores": 3290131,
+      "avg_stores": 3092503.1,
+      "capacity_index_pct": 93.99,
+      "min_stores": 2570513
+    },
+    "AVAILABILITY-data - 2026-02-11T160429.189.csv": {
+      "total_readings": 363,
+      "max_stores": 4206976,
+      "avg_stores": 3931399.8,
+      "capacity_index_pct": 93.45,
+      "min_stores": 3282257
+    },
+    "AVAILABILITY-data - 2026-02-11T160434.574.csv": {
+      "total_readings": 363,
+      "max_stores": 5063230,
+      "avg_stores": 4858994.9,
+      "capacity_index_pct": 95.97,
+      "min_stores": 4205918
+    },
+    "AVAILABILITY-data - 2026-02-11T160439.035.csv": {
+      "total_readings": 363,
+      "max_stores": 5614753,
+      "avg_stores": 5462676.5,
+      "capacity_index_pct": 97.29,
+      "min_stores": 5047077
+    },
+    "AVAILABILITY-data - 2026-02-11T160443.729.csv": {
+      "total_readings": 363,
+      "max_stores": 5738300,
+      "avg_stores": 5634757.4,
+      "capacity_index_pct": 98.2,
+      "min_stores": 5438395
+    },
+    "AVAILABILITY-data - 2026-02-11T160447.539.csv": {
+      "total_readings": 363,
+      "max_stores": 5691115,
+      "avg_stores": 5593988.0,
+      "capacity_index_pct": 98.29,
+      "min_stores": 5537579
+    },
+    "AVAILABILITY-data - 2026-02-11T160451.387.csv": {
+      "total_readings": 363,
+      "max_stores": 5596754,
+      "avg_stores": 5459725.5,
+      "capacity_index_pct": 97.55,
+      "min_stores": 5314593
+    },
+    "AVAILABILITY-data - 2026-02-11T160454.360.csv": {
+      "total_readings": 363,
+      "max_stores": 5378848,
+      "avg_stores": 5200163.8,
+      "capacity_index_pct": 96.68,
+      "min_stores": 5044375
+    },
+    "AVAILABILITY-data - 2026-02-11T160458.126.csv": {
+      "total_readings": 363,
+      "max_stores": 5254339,
+      "avg_stores": 5092991.6,
+      "capacity_index_pct": 96.93,
+      "min_stores": 4872907
+    },
+    "AVAILABILITY-data - 2026-02-11T160501.676.csv": {
+      "total_readings": 363,
+      "max_stores": 5103045,
+      "avg_stores": 4803756.9,
+      "capacity_index_pct": 94.14,
+      "min_stores": 4536982
+    },
+    "AVAILABILITY-data - 2026-02-11T160504.710.csv": {
+      "total_readings": 363,
+      "max_stores": 4542395,
+      "avg_stores": 4058430.1,
+      "capacity_index_pct": 89.35,
+      "min_stores": 3723700
+    },
+    "AVAILABILITY-data - 2026-02-11T160844.912.csv": {
+      "total_readings": 363,
+      "max_stores": 3744595,
+      "avg_stores": 3135459.1,
+      "capacity_index_pct": 83.73,
+      "min_stores": 2632283
+    },
+    "AVAILABILITY-data - 2026-02-11T160904.870.csv": {
+      "total_readings": 363,
+      "max_stores": 2634488,
+      "avg_stores": 1938419.6,
+      "capacity_index_pct": 73.58,
+      "min_stores": 1501845
+    },
+    "AVAILABILITY-data - 2026-02-11T160918.870.csv": {
+      "total_readings": 41,
+      "max_stores": 1506093,
+      "avg_stores": 893067.2,
+      "capacity_index_pct": 59.3,
+      "min_stores": 5966
+    },
+    "AVAILABILITY-data - 2026-02-11T161016.059.csv": {
+      "total_readings": 292,
+      "max_stores": 23971,
+      "avg_stores": 16279.2,
+      "capacity_index_pct": 67.91,
+      "min_stores": 101
+    },
+    "AVAILABILITY-data - 2026-02-11T161028.766.csv": {
+      "total_readings": 363,
+      "max_stores": 43136,
+      "avg_stores": 37206.2,
+      "capacity_index_pct": 86.25,
+      "min_stores": 21786
+    },
+    "AVAILABILITY-data - 2026-02-11T161033.869.csv": {
+      "total_readings": 363,
+      "max_stores": 396432,
+      "avg_stores": 306569.4,
+      "capacity_index_pct": 77.33,
+      "min_stores": 42510
+    },
+    "AVAILABILITY-data - 2026-02-11T161038.880.csv": {
+      "total_readings": 363,
+      "max_stores": 1229277,
+      "avg_stores": 990398.1,
+      "capacity_index_pct": 80.57,
+      "min_stores": 396230
+    },
+    "AVAILABILITY-data - 2026-02-11T161043.388.csv": {
+      "total_readings": 363,
+      "max_stores": 1962431,
+      "avg_stores": 1783313.9,
+      "capacity_index_pct": 90.87,
+      "min_stores": 1228506
+    },
+    "AVAILABILITY-data - 2026-02-11T161050.563.csv": {
+      "total_readings": 363,
+      "max_stores": 2576428,
+      "avg_stores": 2421748.9,
+      "capacity_index_pct": 94.0,
+      "min_stores": 1961609
+    },
+    "AVAILABILITY-data - 2026-02-11T161055.583.csv": {
+      "total_readings": 363,
+      "max_stores": 3354841,
+      "avg_stores": 3173297.5,
+      "capacity_index_pct": 94.59,
+      "min_stores": 2576197
+    },
+    "AVAILABILITY-data - 2026-02-11T161101.927.csv": {
+      "total_readings": 363,
+      "max_stores": 4184409,
+      "avg_stores": 3971899.8,
+      "capacity_index_pct": 94.92,
+      "min_stores": 3354219
+    },
+    "AVAILABILITY-data - 2026-02-11T161107.120.csv": {
+      "total_readings": 363,
+      "max_stores": 4840555,
+      "avg_stores": 4681929.4,
+      "capacity_index_pct": 96.72,
+      "min_stores": 4180917
+    },
+    "AVAILABILITY-data - 2026-02-11T161111.770.csv": {
+      "total_readings": 363,
+      "max_stores": 4969210,
+      "avg_stores": 4806549.3,
+      "capacity_index_pct": 96.73,
+      "min_stores": 4597157
+    },
+    "AVAILABILITY-data - 2026-02-11T161116.350.csv": {
+      "total_readings": 363,
+      "max_stores": 4660228,
+      "avg_stores": 4487827.6,
+      "capacity_index_pct": 96.3,
+      "min_stores": 4298940
+    },
+    "AVAILABILITY-data - 2026-02-11T161122.514.csv": {
+      "total_readings": 363,
+      "max_stores": 4477354,
+      "avg_stores": 4326305.9,
+      "capacity_index_pct": 96.63,
+      "min_stores": 4049125
+    },
+    "AVAILABILITY-data - 2026-02-11T161135.095.csv": {
+      "total_readings": 363,
+      "max_stores": 4271296,
+      "avg_stores": 3853100.1,
+      "capacity_index_pct": 90.21,
+      "min_stores": 2277694
+    },
+    "AVAILABILITY-data - 2026-02-11T161146.101.csv": {
+      "total_readings": 363,
+      "max_stores": 4020690,
+      "avg_stores": 3861311.3,
+      "capacity_index_pct": 96.04,
+      "min_stores": 3699348
+    },
+    "AVAILABILITY-data - 2026-02-11T161151.133.csv": {
+      "total_readings": 363,
+      "max_stores": 3825157,
+      "avg_stores": 3401844.0,
+      "capacity_index_pct": 88.93,
+      "min_stores": 3164539
+    },
+    "AVAILABILITY-data - 2026-02-11T161156.743.csv": {
+      "total_readings": 363,
+      "max_stores": 3173858,
+      "avg_stores": 2658728.7,
+      "capacity_index_pct": 83.77,
+      "min_stores": 2228880
+    },
+    "AVAILABILITY-data - 2026-02-11T161201.279.csv": {
+      "total_readings": 363,
+      "max_stores": 2234089,
+      "avg_stores": 1489298.9,
+      "capacity_index_pct": 66.66,
+      "min_stores": 1016005
+    },
+    "AVAILABILITY-data - 2026-02-11T161208.642.csv": {
+      "total_readings": 42,
+      "max_stores": 1017493,
+      "avg_stores": 603455.2,
+      "capacity_index_pct": 59.31,
+      "min_stores": 6974
+    },
+    "AVAILABILITY-data - 2026-02-11T162459.320.csv": {
+      "total_readings": 293,
+      "max_stores": 18180,
+      "avg_stores": 12983.2,
+      "capacity_index_pct": 71.41,
+      "min_stores": 22
+    },
+    "AVAILABILITY-data - 2026-02-11T162503.731.csv": {
+      "total_readings": 363,
+      "max_stores": 51736,
+      "avg_stores": 39301.3,
+      "capacity_index_pct": 75.97,
+      "min_stores": 17082
+    },
+    "AVAILABILITY-data - 2026-02-11T162508.560.csv": {
+      "total_readings": 347,
+      "max_stores": 497985,
+      "avg_stores": 382130.3,
+      "capacity_index_pct": 76.74,
+      "min_stores": 145092
+    },
+    "AVAILABILITY-data - 2026-02-11T162512.685.csv": {
+      "total_readings": 363,
+      "max_stores": 1533430,
+      "avg_stores": 1222584.7,
+      "capacity_index_pct": 79.73,
+      "min_stores": 491463
+    },
+    "AVAILABILITY-data - 2026-02-11T162516.046.csv": {
+      "total_readings": 363,
+      "max_stores": 2308742,
+      "avg_stores": 2087183.5,
+      "capacity_index_pct": 90.4,
+      "min_stores": 1517274
+    },
+    "AVAILABILITY-data - 2026-02-11T162519.870.csv": {
+      "total_readings": 363,
+      "max_stores": 2959242,
+      "avg_stores": 2753926.0,
+      "capacity_index_pct": 93.06,
+      "min_stores": 2235537
+    },
+    "AVAILABILITY-data - 2026-02-11T162524.898.csv": {
+      "total_readings": 363,
+      "max_stores": 3731019,
+      "avg_stores": 3558116.1,
+      "capacity_index_pct": 95.37,
+      "min_stores": 2951215
+    },
+    "AVAILABILITY-data - 2026-02-11T162528.931.csv": {
+      "total_readings": 363,
+      "max_stores": 4409298,
+      "avg_stores": 4235675.4,
+      "capacity_index_pct": 96.06,
+      "min_stores": 3717357
+    },
+    "AVAILABILITY-data - 2026-02-11T162838.106.csv": {
+      "total_readings": 363,
+      "max_stores": 4409298,
+      "avg_stores": 4235675.4,
+      "capacity_index_pct": 96.06,
+      "min_stores": 3717357
+    },
+    "AVAILABILITY-data - 2026-02-11T162849.252.csv": {
+      "total_readings": 363,
+      "max_stores": 4821904,
+      "avg_stores": 4721735.0,
+      "capacity_index_pct": 97.92,
+      "min_stores": 4338322
+    },
+    "AVAILABILITY-data - 2026-02-11T162854.690.csv": {
+      "total_readings": 363,
+      "max_stores": 5102690,
+      "avg_stores": 4904663.8,
+      "capacity_index_pct": 96.12,
+      "min_stores": 4657231
+    },
+    "AVAILABILITY-data - 2026-02-11T162859.700.csv": {
+      "total_readings": 363,
+      "max_stores": 5122526,
+      "avg_stores": 5070939.7,
+      "capacity_index_pct": 98.99,
+      "min_stores": 4962721
+    },
+    "AVAILABILITY-data - 2026-02-11T162905.462.csv": {
+      "total_readings": 363,
+      "max_stores": 5071340,
+      "avg_stores": 4929529.5,
+      "capacity_index_pct": 97.2,
+      "min_stores": 4806280
+    },
+    "AVAILABILITY-data - 2026-02-11T162909.631.csv": {
+      "total_readings": 363,
+      "max_stores": 4833650,
+      "avg_stores": 4720399.3,
+      "capacity_index_pct": 97.66,
+      "min_stores": 4605807
+    },
+    "AVAILABILITY-data - 2026-02-11T162915.259.csv": {
+      "total_readings": 353,
+      "max_stores": 4665047,
+      "avg_stores": 4500680.2,
+      "capacity_index_pct": 96.48,
+      "min_stores": 4422045
+    },
+    "AVAILABILITY-data - 2026-02-11T162919.781.csv": {
+      "total_readings": 363,
+      "max_stores": 4579892,
+      "avg_stores": 4160583.9,
+      "capacity_index_pct": 90.84,
+      "min_stores": 3504370
+    },
+    "AVAILABILITY-data - 2026-02-11T162924.155.csv": {
+      "total_readings": 363,
+      "max_stores": 3933248,
+      "avg_stores": 3436271.4,
+      "capacity_index_pct": 87.36,
+      "min_stores": 3134388
+    },
+    "AVAILABILITY-data - 2026-02-11T162929.181.csv": {
+      "total_readings": 363,
+      "max_stores": 3157545,
+      "avg_stores": 2636877.0,
+      "capacity_index_pct": 83.51,
+      "min_stores": 2210068
+    },
+    "AVAILABILITY-data - 2026-02-11T162933.912.csv": {
+      "total_readings": 363,
+      "max_stores": 2215801,
+      "avg_stores": 1463293.4,
+      "capacity_index_pct": 66.04,
+      "min_stores": 977300
+    },
+    "AVAILABILITY-data - 2026-02-11T162937.736.csv": {
+      "total_readings": 42,
+      "max_stores": 978775,
+      "avg_stores": 567094.3,
+      "capacity_index_pct": 57.94,
+      "min_stores": 0
+    },
+    "AVAILABILITY-data - 2026-02-11T163004.759.csv": {
+      "total_readings": 293,
+      "max_stores": 15536,
+      "avg_stores": 10571.5,
+      "capacity_index_pct": 68.04,
+      "min_stores": 49
+    },
+    "AVAILABILITY-data - 2026-02-11T163008.863.csv": {
+      "total_readings": 363,
+      "max_stores": 49158,
+      "avg_stores": 36893.4,
+      "capacity_index_pct": 75.05,
+      "min_stores": 13566
+    },
+    "AVAILABILITY-data - 2026-02-11T163100.598.csv": {
+      "total_readings": 344,
+      "max_stores": 520419,
+      "avg_stores": 397946.4,
+      "capacity_index_pct": 76.47,
+      "min_stores": 172862
+    },
+    "AVAILABILITY-data - 2026-02-11T163105.296.csv": {
+      "total_readings": 363,
+      "max_stores": 1562796,
+      "avg_stores": 1261520.1,
+      "capacity_index_pct": 80.72,
+      "min_stores": 518174
+    },
+    "AVAILABILITY-data - 2026-02-11T163111.476.csv": {
+      "total_readings": 363,
+      "max_stores": 2439347,
+      "avg_stores": 2171528.1,
+      "capacity_index_pct": 89.02,
+      "min_stores": 1558975
+    },
+    "AVAILABILITY-data - 2026-02-11T163115.952.csv": {
+      "total_readings": 363,
+      "max_stores": 3116021,
+      "avg_stores": 2905937.0,
+      "capacity_index_pct": 93.26,
+      "min_stores": 2431509
+    },
+    "AVAILABILITY-data - 2026-02-11T163120.450.csv": {
+      "total_readings": 363,
+      "max_stores": 4164882,
+      "avg_stores": 3954258.4,
+      "capacity_index_pct": 94.94,
+      "min_stores": 3106692
+    },
+    "AVAILABILITY-data - 2026-02-11T163124.929.csv": {
+      "total_readings": 363,
+      "max_stores": 4893055,
+      "avg_stores": 4720838.7,
+      "capacity_index_pct": 96.48,
+      "min_stores": 4151902
+    },
+    "AVAILABILITY-data - 2026-02-11T163129.041.csv": {
+      "total_readings": 363,
+      "max_stores": 5600386,
+      "avg_stores": 5380431.4,
+      "capacity_index_pct": 96.07,
+      "min_stores": 4846561
+    },
+    "AVAILABILITY-data - 2026-02-11T163132.804.csv": {
+      "total_readings": 363,
+      "max_stores": 5767000,
+      "avg_stores": 3692793.6,
+      "capacity_index_pct": 64.03,
+      "min_stores": 1633913
+    },
+    "AVAILABILITY-data - 2026-02-11T163136.996.csv": {
+      "total_readings": 363,
+      "max_stores": 5733977,
+      "avg_stores": 3336925.9,
+      "capacity_index_pct": 58.2,
+      "min_stores": 1600223
+    },
+    "AVAILABILITY-data - 2026-02-11T163140.803.csv": {
+      "total_readings": 363,
+      "max_stores": 5696912,
+      "avg_stores": 5566563.3,
+      "capacity_index_pct": 97.71,
+      "min_stores": 5448426
+    },
+    "AVAILABILITY-data - 2026-02-11T163144.806.csv": {
+      "total_readings": 363,
+      "max_stores": 5559498,
+      "avg_stores": 5375749.9,
+      "capacity_index_pct": 96.69,
+      "min_stores": 5242833
+    },
+    "AVAILABILITY-data - 2026-02-11T163257.167.csv": {
+      "total_readings": 363,
+      "max_stores": 5262011,
+      "avg_stores": 5175262.9,
+      "capacity_index_pct": 98.35,
+      "min_stores": 5111953
+    },
+    "AVAILABILITY-data - 2026-02-11T163301.287.csv": {
+      "total_readings": 363,
+      "max_stores": 5124121,
+      "avg_stores": 4803092.4,
+      "capacity_index_pct": 93.73,
+      "min_stores": 4493284
+    },
+    "AVAILABILITY-data - 2026-02-11T163309.828.csv": {
+      "total_readings": 363,
+      "max_stores": 4513937,
+      "avg_stores": 3986973.3,
+      "capacity_index_pct": 88.33,
+      "min_stores": 3658536
+    },
+    "AVAILABILITY-data - 2026-02-11T163313.663.csv": {
+      "total_readings": 363,
+      "max_stores": 3669536,
+      "avg_stores": 2949968.8,
+      "capacity_index_pct": 80.39,
+      "min_stores": 2440734
+    },
+    "AVAILABILITY-data - 2026-02-11T163317.768.csv": {
+      "total_readings": 363,
+      "max_stores": 2449664,
+      "avg_stores": 1604928.1,
+      "capacity_index_pct": 65.52,
+      "min_stores": 1074886
+    },
+    "AVAILABILITY-data - 2026-02-11T163322.518.csv": {
+      "total_readings": 42,
+      "max_stores": 1075800,
+      "avg_stores": 628940.5,
+      "capacity_index_pct": 58.46,
+      "min_stores": 2763
+    },
+    "AVAILABILITY-data - 2026-02-11T163352.659.csv": {
+      "total_readings": 293,
+      "max_stores": 23020,
+      "avg_stores": 15666.2,
+      "capacity_index_pct": 68.05,
+      "min_stores": 82
+    },
+    "AVAILABILITY-data - 2026-02-11T163356.970.csv": {
+      "total_readings": 363,
+      "max_stores": 52008,
+      "avg_stores": 41704.8,
+      "capacity_index_pct": 80.19,
+      "min_stores": 21047
+    },
+    "AVAILABILITY-data - 2026-02-11T163407.924.csv": {
+      "total_readings": 363,
+      "max_stores": 551012,
+      "avg_stores": 401656.5,
+      "capacity_index_pct": 72.89,
+      "min_stores": 51867
+    },
+    "AVAILABILITY-data - 2026-02-11T163412.206.csv": {
+      "total_readings": 363,
+      "max_stores": 1693792,
+      "avg_stores": 1363065.0,
+      "capacity_index_pct": 80.47,
+      "min_stores": 520282
+    },
+    "AVAILABILITY-data - 2026-02-11T163416.336.csv": {
+      "total_readings": 363,
+      "max_stores": 2700540,
+      "avg_stores": 2401304.1,
+      "capacity_index_pct": 88.92,
+      "min_stores": 1690594
+    },
+    "AVAILABILITY-data - 2026-02-11T163420.714.csv": {
+      "total_readings": 363,
+      "max_stores": 3419631,
+      "avg_stores": 3225902.8,
+      "capacity_index_pct": 94.33,
+      "min_stores": 2693831
+    },
+    "AVAILABILITY-data - 2026-02-11T163424.575.csv": {
+      "total_readings": 363,
+      "max_stores": 4245466,
+      "avg_stores": 4054353.7,
+      "capacity_index_pct": 95.5,
+      "min_stores": 3413209
+    },
+    "AVAILABILITY-data - 2026-02-11T163429.048.csv": {
+      "total_readings": 363,
+      "max_stores": 5065625,
+      "avg_stores": 4854786.0,
+      "capacity_index_pct": 95.84,
+      "min_stores": 4232457
+    },
+    "AVAILABILITY-data - 2026-02-11T163433.165.csv": {
+      "total_readings": 363,
+      "max_stores": 5710374,
+      "avg_stores": 5521666.6,
+      "capacity_index_pct": 96.7,
+      "min_stores": 5049530
+    }
+  }
+}
