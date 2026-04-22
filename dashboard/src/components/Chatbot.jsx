@@ -1,7 +1,6 @@
-
 import { useEffect, useRef, useState } from "react";
 
-
+// ── Backend URL: En dev usa el proxy de Vite, en prod usa el reverse proxy de Nginx
 const BACKEND_URL = "/chat";
 
 const QUICK_REPLIES = [
@@ -49,7 +48,7 @@ async function queryChatbot(question, history = [], dashboardData = null) {
   return data.response;
 }
 
-export default function Chatbot({ kpis, tableRows }) {
+export default function Chatbot({ kpis, tableRows, filters }) {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([
     {
@@ -73,7 +72,8 @@ export default function Chatbot({ kpis, tableRows }) {
 
   // ── Check backend health on mount ────────────────────────────────────────
   useEffect(() => {
-    fetch("/health")
+    const healthUrl = BACKEND_URL.replace("/chat", "/health");
+    fetch(healthUrl)
       .then((r) => r.json())
       .then((d) => setBackendStatus(d.dataReady ? "ok" : "no-data"))
       .catch(() => setBackendStatus("error"));
@@ -101,7 +101,8 @@ export default function Chatbot({ kpis, tableRows }) {
     setLoading(true);
 
     try {
-      const reply = await queryChatbot(question, history, { kpis, tableRows });
+      // Arquitectura Agéntica: Inyectamos los filtros actuales para que el bot sea UI-Aware
+      const reply = await queryChatbot(question, history, { kpis, tableRows, filters });
       setMessages((m) => [...m, { role: "bot", text: mdToHtml(reply), time: nowTime() }]);
       setBackendStatus("ok");
     } catch (err) {

@@ -65,6 +65,7 @@ export default function App() {
     microDropsByHour,
     tableRows,
     // Filters
+    applied,
     storeFilter, setStoreFilter,
     statusFilter, setStatusFilter,
     dateFrom, setDateFrom,
@@ -398,7 +399,7 @@ export default function App() {
       </main>
 
       {/* ── CHATBOT (AI Consultant via n8n) ── */}
-      <Chatbot kpis={kpis} tableRows={tableRows} />
+      <Chatbot kpis={kpis} tableRows={tableRows} filters={applied} />
     </div>
   );
 }

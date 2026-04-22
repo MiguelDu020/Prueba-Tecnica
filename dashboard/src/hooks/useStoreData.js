@@ -30,20 +30,20 @@ const SLA_CAPACITY_FACTOR = 0.80; // 80% of max considered "below SLA"
 
 export default function useStoreData() {
   // ── Raw state ─────────────────────────────────────────────────────────
-  const [rows, setRows]       = useState([]);
+  const [rows, setRows] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError]     = useState(null);
+  const [error, setError] = useState(null);
 
   // ── Filter state ──────────────────────────────────────────────────────
-  const [storeFilter,  setStoreFilter]  = useState("all");
+  const [storeFilter, setStoreFilter] = useState("all");
   const [statusFilter, setStatusFilter] = useState("all");
-  const [dateFrom,     setDateFrom]     = useState("2026-02-01");
-  const [dateTo,       setDateTo]       = useState("2026-03-31");
+  const [dateFrom, setDateFrom] = useState("2026-02-01");
+  const [dateTo, setDateTo] = useState("2026-03-31");
   const [applied, setApplied] = useState({
-    store:  "all",
+    store: "all",
     status: "all",
-    from:   "2026-02-01",
-    to:     "2026-03-31",
+    from: "2026-02-01",
+    to: "2026-03-31",
   });
 
   // ── CSV loading ───────────────────────────────────────────────────────
@@ -60,10 +60,10 @@ export default function useStoreData() {
         const parsed = Papa.parse(text, { header: true, skipEmptyLines: true });
         const cleaned = parsed.data
           .map((r) => ({
-            timestamp:   r["timestamp"]   || r["timestamp_raw"] || "",
-            metric:      r["metric"]      || r["metric (sf_metric)"] || "",
+            timestamp: r["timestamp"] || r["timestamp_raw"] || "",
+            metric: r["metric"] || r["metric (sf_metric)"] || "",
             source_file: r["source_file"] || "",
-            value:       Number(r["value"] ?? r["value_raw"] ?? 0),
+            value: Number(r["value"] ?? r["value_raw"] ?? 0),
           }))
           .filter((r) => r.timestamp && !isNaN(new Date(r.timestamp)) && !isNaN(r.value))
           .sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
@@ -92,34 +92,37 @@ export default function useStoreData() {
 
   const slaThreshold = globalMax * SLA_CAPACITY_FACTOR;
 
-  // ── Filtered data ─────────────────────────────────────────────────────
+  // ── Filtered data (Alimenta tanto a los Charts como al Agente de IA) ──
+  // El estado de estos filtros se pasa al backend al hacer una consulta.
+  // Esto permite responder dinámicamente a "Cómo estuvo la disponibilidad el día X"
+  // sin necesidad de enviarle a la IA todo el dataset completo.
   const filtered = useMemo(() => {
     if (!rows.length) return [];
     return rows.filter((r) => {
-      const t      = new Date(r.timestamp).getTime();
+      const t = new Date(r.timestamp).getTime();
       const fromOk = applied.from ? t >= new Date(applied.from).getTime() : true;
-      const toOk   = applied.to   ? t <= new Date(applied.to + "T23:59:59").getTime() : true;
-      const storeOk  = applied.store  === "all" || r.source_file === applied.store;
+      const toOk = applied.to ? t <= new Date(applied.to + "T23:59:59").getTime() : true;
+      const storeOk = applied.store === "all" || r.source_file === applied.store;
       const statusOk =
         applied.status === "all" ||
-        (applied.status === "online"  && r.value >= slaThreshold) ||
-        (applied.status === "offline" && r.value <  slaThreshold);
+        (applied.status === "online" && r.value >= slaThreshold) ||
+        (applied.status === "offline" && r.value < slaThreshold);
       return fromOk && toOk && storeOk && statusOk;
     });
   }, [rows, applied, slaThreshold]);
 
   // ── Core statistics ───────────────────────────────────────────────────
-  const allValues  = filtered.map((r) => r.value);
-  const maxStores  = allValues.length ? Math.max(...allValues) : 0;
-  const minStores  = allValues.length ? Math.min(...allValues) : 0;
-  const avgStores  = allValues.length ? allValues.reduce((a, b) => a + b, 0) / allValues.length : 0;
+  const allValues = filtered.map((r) => r.value);
+  const maxStores = allValues.length ? Math.max(...allValues) : 0;
+  const minStores = allValues.length ? Math.min(...allValues) : 0;
+  const avgStores = allValues.length ? allValues.reduce((a, b) => a + b, 0) / allValues.length : 0;
   const latestValue = allValues.length ? allValues[allValues.length - 1] : 0;
 
   // ── Business Metrics ──────────────────────────────────────────────────
 
   // 1. Active Capacity Index
   const capacityIndex = computeCapacityIndex(latestValue, globalMax);
-  const slaStatus     = evaluateSLAStatus(capacityIndex, SLA_ALERT_THRESHOLD);
+  const slaStatus = evaluateSLAStatus(capacityIndex, SLA_ALERT_THRESHOLD);
 
   // 2. Network Volatility
   const volatilityData = useMemo(
@@ -147,18 +150,18 @@ export default function useStoreData() {
 
   // ── KPI display values ────────────────────────────────────────────────
   const kpis = {
-    onlineCount:    Math.round(avgStores),
-    offlineCount:   Math.round(maxStores - avgStores),
-    totalEvents:    filtered.length,
-    avgUptime:      maxStores > 0 ? (avgStores / maxStores) * 100 : 0,
+    onlineCount: Math.round(avgStores),
+    offlineCount: Math.round(maxStores - avgStores),
+    totalEvents: filtered.length,
+    avgUptime: maxStores > 0 ? (avgStores / maxStores) * 100 : 0,
     capacityIndex,
     slaStatus,
     volScore,
     microDropCount: microDrops.length,
     avgRecovery,
-    recoveryCount:  recoveryEvents.length,
+    recoveryCount: recoveryEvents.length,
     latestValue,
-    maxStores:      globalMax,
+    maxStores: globalMax,
     minStores,
   };
 
@@ -188,7 +191,7 @@ export default function useStoreData() {
     const N = Math.max(1, Math.floor(volatilityData.length / 60));
     const buckets = [];
     for (let i = 0; i < volatilityData.length; i += N) {
-      const chunk    = volatilityData.slice(i, i + N);
+      const chunk = volatilityData.slice(i, i + N);
       const avgDelta = chunk.reduce((s, d) => s + d.delta, 0) / chunk.length;
       buckets.push({
         label: new Date(chunk[0].timestamp).toLocaleDateString("en-US", {
@@ -203,14 +206,14 @@ export default function useStoreData() {
   // Heatmap matrix: [dayOfWeek 0=Mon..6=Sun][hour 0..23] = avgStores | null
   const heatmapMatrix = useMemo(() => {
     if (!filtered.length) return null;
-    const sums   = Array.from({ length: 7 }, () => new Array(24).fill(0));
+    const sums = Array.from({ length: 7 }, () => new Array(24).fill(0));
     const counts = Array.from({ length: 7 }, () => new Array(24).fill(0));
     for (const r of filtered) {
       const d = new Date(r.timestamp);
       if (isNaN(d)) continue;
-      const dow  = (d.getDay() + 6) % 7;
+      const dow = (d.getDay() + 6) % 7;
       const hour = d.getHours();
-      sums[dow][hour]   += r.value;
+      sums[dow][hour] += r.value;
       counts[dow][hour] += 1;
     }
     return sums.map((row, d) =>
@@ -235,12 +238,12 @@ export default function useStoreData() {
     .slice(-20)
     .reverse()
     .map((r, i) => ({
-      id:      `#${(i + 1).toString().padStart(5, "0")}`,
-      name:    r.metric || r.source_file,
-      status:  globalMax > 0 && r.value >= slaThreshold ? "online" : "offline",
-      uptime:  globalMax > 0 ? Math.min(100, Math.round((r.value / globalMax) * 100)) : 0,
+      id: `#${(i + 1).toString().padStart(5, "0")}`,
+      name: r.metric || r.source_file,
+      status: globalMax > 0 && r.value >= slaThreshold ? "online" : "offline",
+      uptime: globalMax > 0 ? Math.min(100, Math.round((r.value / globalMax) * 100)) : 0,
       changes: r.value,
-      last:    r.timestamp,
+      last: r.timestamp,
     }));
 
   // ── Filter actions ────────────────────────────────────────────────────
@@ -263,10 +266,11 @@ export default function useStoreData() {
     rows,
 
     // Filters
-    storeFilter,  setStoreFilter,
+    applied,
+    storeFilter, setStoreFilter,
     statusFilter, setStatusFilter,
-    dateFrom,     setDateFrom,
-    dateTo,       setDateTo,
+    dateFrom, setDateFrom,
+    dateTo, setDateTo,
     storeNames,
     applyFilters,
     clearFilters,

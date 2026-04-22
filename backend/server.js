@@ -18,6 +18,10 @@ app.use(express.json());
 
 let storeData = null;
 
+// ── CARGA DE DATOS (ETL Pre-procesado) ─────────────────────────────────────
+// Decisión de Arquitectura: En lugar de usar un sistema pesado de RAG (Vector DB)
+// y enviar el CSV de 14MB en cada request (lo que agota tokens y aumenta latencia),
+// cargamos en memoria un JSON ultraligero con métricas globales pre-calculadas en Python.
 function loadStoreData() {
   if (storeData) return storeData;
   if (!fs.existsSync(DATA_PATH)) {
@@ -30,6 +34,10 @@ function loadStoreData() {
   return storeData;
 }
 
+// ── CONSTRUCCIÓN DEL CONTEXTO (Agente de IA) ─────────────────────────────
+// El prompt dinámico actúa como el "ojo" del chatbot. En lugar de estar aislado,
+// el chatbot recibe métricas pre-calculadas Y también el estado actual de la UI (dashboardData).
+// Esto le da consciencia espacial y temporal de lo que el usuario está viendo.
 function buildSystemPrompt(data, dashboardData) {
   const g = data.global_metrics;
   const h = data.hourly_distribution;
@@ -43,14 +51,27 @@ function buildSystemPrompt(data, dashboardData) {
     .join("\n");
 
   let dashboardContext = "";
-  if (dashboardData && dashboardData.kpis) {
-    const kpis = dashboardData.kpis;
+  if (dashboardData) {
+    const kpis = dashboardData.kpis || {};
+    const filters = dashboardData.filters || {};
     const hours = Math.floor((kpis.avgRecovery || 0) / 60);
     const mins = Math.round((kpis.avgRecovery || 0) % 60);
     const recoveryStr = hours > 0 ? `${hours}h ${mins}min` : `${mins}min`;
 
+    let filtersStr = "Filtros aplicados en la interfaz:\n";
+    if (filters.from && filters.to) {
+      filtersStr += `- Rango de fechas: Desde el ${filters.from} hasta el ${filters.to}\n`;
+    } else {
+      filtersStr += `- Rango de fechas: Todo el histórico (1 feb - 11 feb)\n`;
+    }
+    if (filters.store && filters.store !== "all") {
+      filtersStr += `- Fuente específica: ${filters.store}\n`;
+    }
+
     dashboardContext = `
-### KPIs Calculados en Tiempo Real (Visibles en Dashboard)
+### Contexto Actual (Lo que el usuario está viendo ahora mismo)
+${filtersStr}
+### KPIs Calculados para este contexto:
 - Índice de Capacidad: ${kpis.capacityIndex?.toFixed(1) || 0}% (${(kpis.latestValue || 0).toLocaleString()} / ${(kpis.maxStores || 0).toLocaleString()} stores)
 - Volatilidad de Red (Score): ${(kpis.volScore || 0).toLocaleString()} (${kpis.microDropCount || 0} micro-drops detectados)
 - Tiempo de Resiliencia: ${recoveryStr} (${kpis.recoveryCount || 0} recovery events)
