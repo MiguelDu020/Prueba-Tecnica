@@ -293,7 +293,7 @@ export default function App() {
                 <div className="chart-subtitle">Cambios bruscos entre intervalos de 10s</div>
               </div>
               <span className={`chart-tag ${kpis.volScore > 200 ? "chart-tag-warning" : ""}`}>
-                {kpis.volScore > 200 ? "⚠ Inestable" : "✓ Estable"}
+                {kpis.volScore > 200 ? "Inestable" : "Estable"}
               </span>
             </div>
             <div className="chart-container">

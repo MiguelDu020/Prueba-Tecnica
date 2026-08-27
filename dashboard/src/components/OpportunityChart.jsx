@@ -26,7 +26,7 @@ export default function OpportunityChart({ hourlyAvgs, maxStores, microDropsByHo
     const opp = (hourlyAvgs ?? []).map(v =>
       maxStores > 0 ? Math.min(100, Math.round((v / maxStores) * 100)) : 0
     );
-    const loss  = opp.map(v => 100 - v);
+    const loss = opp.map(v => 100 - v);
     const drops = microDropsByHour ?? new Array(24).fill(0);
     return { opp, loss, drops };
   }, [hourlyAvgs, maxStores, microDropsByHour]);
@@ -46,8 +46,8 @@ export default function OpportunityChart({ hourlyAvgs, maxStores, microDropsByHo
           const { ctx: c, chartArea } = chart;
           if (!chartArea) return "rgba(41,216,132,0.75)";
           const gradient = c.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
-          gradient.addColorStop(0,   "rgba(41,216,132,0.90)");
-          gradient.addColorStop(1,   "rgba(17,69,65,0.60)");
+          gradient.addColorStop(0, "rgba(41,216,132,0.90)");
+          gradient.addColorStop(1, "rgba(17,69,65,0.60)");
           return gradient;
         },
         borderRadius: { topLeft: 3, topRight: 3 },
@@ -66,8 +66,8 @@ export default function OpportunityChart({ hourlyAvgs, maxStores, microDropsByHo
           const { ctx: c, chartArea } = chart;
           if (!chartArea) return "rgba(255,66,57,0.55)";
           const gradient = c.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
-          gradient.addColorStop(0,   "rgba(255,66,57,0.75)");
-          gradient.addColorStop(1,   "rgba(252,103,78,0.30)");
+          gradient.addColorStop(0, "rgba(255,66,57,0.75)");
+          gradient.addColorStop(1, "rgba(252,103,78,0.30)");
           return gradient;
         },
         borderRadius: { topLeft: 3, topRight: 3 },
@@ -88,7 +88,7 @@ export default function OpportunityChart({ hourlyAvgs, maxStores, microDropsByHo
         fill: false,
         pointBackgroundColor: drops.map(v =>
           v >= maxDrops * 0.75 ? "#ff4239" :
-          v >= maxDrops * 0.40 ? "#fc674e" : "#ffb347"
+            v >= maxDrops * 0.40 ? "#fc674e" : "#ffb347"
         ),
         pointRadius: drops.map(v => v > 0 ? 4 : 2),
         pointHoverRadius: 7,
@@ -125,15 +125,15 @@ export default function OpportunityChart({ hourlyAvgs, maxStores, microDropsByHo
         callbacks: {
           title: (items) => `🕐 ${items[0].label}:00 – ${parseInt(items[0].label) + 1}:00`,
           label: (item) => {
-            if (item.datasetIndex === 0) return `  ✅ Oportunidad protegida: ${item.raw}%`;
-            if (item.datasetIndex === 1) return `  ❌ Oportunidad perdida:   ${item.raw}%`;
-            return `  ⚡ Micro-caídas: ${item.raw} eventos`;
+            if (item.datasetIndex === 0) return `  Oportunidad protegida: ${item.raw}%`;
+            if (item.datasetIndex === 1) return `  Oportunidad perdida:   ${item.raw}%`;
+            return `  Micro-caídas: ${item.raw} eventos`;
           },
           afterBody: (items) => {
             const oppVal = items[0]?.raw;
-            if (oppVal >= 80) return [" ", "  🟢 Infraestructura resiliente"];
-            if (oppVal >= 50) return [" ", "  🟡 Degradación moderada"];
-            return [" ", "  🔴 Ventana de oportunidad crítica"];
+            if (oppVal >= 80) return [" ", "  Infraestructura resiliente"];
+            if (oppVal >= 50) return [" ", "  Degradación moderada"];
+            return [" ", "  Ventana de oportunidad crítica"];
           },
         },
       },

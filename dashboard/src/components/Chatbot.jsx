@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 
-// ── Backend URL: En dev usa el proxy de Vite, en prod usa el reverse proxy de Nginx
-const BACKEND_URL = "/chat";
+// ── Backend URL: en dev usa el proxy de Vite (o el de Nginx en Docker local);
+// en prod (frontend y backend en dominios distintos) usa VITE_BACKEND_URL.
+const API_BASE = import.meta.env.VITE_BACKEND_URL || "";
+const BACKEND_URL = `${API_BASE}/chat`;
 
 const QUICK_REPLIES = [
   ["🔴 Tiendas offline", "¿Cuántas tiendas estuvieron offline?"],

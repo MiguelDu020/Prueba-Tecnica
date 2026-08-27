@@ -11,7 +11,7 @@ Este proyecto utiliza una arquitectura moderna, modular y *stateless*, diseñada
 ### Stack Tecnológico
 - **Frontend:** React 19, Vite, Chart.js (Visualización de datos), Vanilla CSS.
 - **Backend:** Node.js, Express.
-- **Inteligencia Artificial:** Groq SDK, Modelo Llama-3.3-70b-versatile.
+- **Inteligencia Artificial:** Groq SDK, Modelo openai/gpt-oss-120b.
 - **Procesamiento de Datos (ETL):** Python (Pandas).
 - **Despliegue y Orquestación:** Docker, Docker Compose, Nginx (Reverse Proxy).
 
@@ -24,7 +24,7 @@ Este proyecto utiliza una arquitectura moderna, modular y *stateless*, diseñada
    - El frontend calcula y visualiza decenas de miles de puntos de datos en el navegador usando optimizaciones de Chart.js y Hooks de React (`useStoreData`) sin requerir un backend pesado para cálculos estadísticos.
 3. **Chatbot**
    - El agente de IA no está aislado. Cuando el usuario filtra fechas o tiendas en el dashboard, el frontend **inyecta los filtros activos y los KPIs actuales** directamente en el *System Prompt* del backend.
-   - Esto permite que el Chatbot de Llama 3.3 entienda exactamente lo que el usuario está viendo en su pantalla, respondiendo con un contexto perfecto.
+   - Esto permite que el Chatbot entienda exactamente lo que el usuario está viendo en su pantalla, respondiendo con un contexto perfecto.
 
 ---
 
