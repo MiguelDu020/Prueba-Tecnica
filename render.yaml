@@ -5,6 +5,9 @@ services:
     plan: free
     rootDir: backend
     dockerfilePath: ./Dockerfile
+    buildFilter:
+      paths:
+        - backend/**
     envVars:
       - key: PORT
         value: 3001
@@ -17,6 +20,9 @@ services:
     rootDir: dashboard
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
+    buildFilter:
+      paths:
+        - dashboard/**
     envVars:
       - key: VITE_BACKEND_URL
         value: https://rappi-backend-uej0.onrender.com
