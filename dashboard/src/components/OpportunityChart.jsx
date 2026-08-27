@@ -7,9 +7,9 @@
  *   la experiencia del usuario?"
  *
  * Codificación visual:
- *  🟢 Barras verdes  → % de capacidad protegida (oportunidad capturada)
- *  🔴 Barras rojas   → % de capacidad perdida   (oportunidad destruida por inestabilidad)
- *  🟠 Línea naranja  → Índice de micro-caídas por hora (resiliencia infraestructura)
+ *  Barras verdes  → % de capacidad protegida (oportunidad capturada)
+ *  Barras rojas   → % de capacidad perdida   (oportunidad destruida por inestabilidad)
+ *  Línea naranja  → Índice de micro-caídas por hora (resiliencia infraestructura)
  *
  * Ejes:
  *  Y1 (izq) → 0–100%  Ventana de oportunidad
@@ -123,7 +123,7 @@ export default function OpportunityChart({ hourlyAvgs, maxStores, microDropsByHo
         padding: 12,
         cornerRadius: 10,
         callbacks: {
-          title: (items) => `🕐 ${items[0].label}:00 – ${parseInt(items[0].label) + 1}:00`,
+          title: (items) => `${items[0].label}:00 – ${parseInt(items[0].label) + 1}:00`,
           label: (item) => {
             if (item.datasetIndex === 0) return `  Oportunidad protegida: ${item.raw}%`;
             if (item.datasetIndex === 1) return `  Oportunidad perdida:   ${item.raw}%`;
