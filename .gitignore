@@ -23,7 +23,6 @@ Thumbs.db
 *.sln
 *.sw?
 
-# El CSV crudo debe subirse para que los evaluadores puedan probar la app localmente (pesa solo 14MB, entra en el límite de GitHub)
 # dashboard/public/cleaned_long_format.csv
 Datos/
 
