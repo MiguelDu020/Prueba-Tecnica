@@ -19,7 +19,7 @@ services:
     staticPublishPath: ./dist
     envVars:
       - key: VITE_BACKEND_URL
-        value: https://rappi-backend.onrender.com
+        value: https://rappi-backend-uej0.onrender.com
     routes:
       - type: rewrite
         source: /*
